@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Cm_Saas>
+            <codePool>community</codePool>
+            <active>true</active>
+        </Cm_Saas>
+    </modules>
+</config>
