@@ -18,6 +18,12 @@
             </saas>
             <saas_resource>
                 <class>Cm_Saas_Model_Resource</class>
+                <entities>
+                    <user>          <table>saas_user</table></user>
+                    <user_role>     <table>saas_user_role</table></user_role>
+                    <user_rule>     <table>saas_user_rule</table></user_rule>
+                    <user_assert>   <table>saas_user_assert</table></user_assert>
+                </entities>
             </saas_resource>
         </models>
         <blocks>
@@ -51,14 +57,32 @@
         </layout>
     </adminhtml>
     <saas>
+        <events>
+            <controller_action_predispatch>
+                <observers>
+                    <auth>
+                        <class>saas/observer</class>
+                        <method>actionPreDispatchSaas</method>
+                    </auth>
+                </observers>
+            </controller_action_predispatch>
+        </events>
         <routers>
             <saas>
                 <use>saas</use>
                 <args>
                     <module>Cm_Saas_Saas</module>
+                    <frontName>saas</frontName>
                 </args>
             </saas>
         </routers>
+        <layout>
+            <updates>
+                <saas>
+                    <file>main.xml</file>
+                </saas>
+            </updates>
+        </layout>
     </saas>
     <frontend>
         <routers>
@@ -66,7 +90,7 @@
                 <use>standard</use>
                 <args>
                     <module>Cm_Saas_Frontend</module>
-                    <frontName>saas</frontName>
+                    <frontName>saastest</frontName>
                 </args>
             </saas>
         </routers>

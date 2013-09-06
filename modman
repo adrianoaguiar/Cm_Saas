@@ -1,0 +1,4 @@
+areas/saas/layout/*                    app/design/saas/base/default/layout/
+areas/saas/template/*                  app/design/saas/base/default/template/
+code/Saas                              app/code/community/Cm/Saas
+Cm_Saas.xml                            app/etc/modules/Cm_Saas.xml

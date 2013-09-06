@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <profile translate="title">
+            <title>My Account</title>
+            <action>saas/profile</action>
+            <sort_order>10</sort_order>
+        </profile>
+        <dashboard translate="title" module="saas">
+            <title>Dashboard</title>
+            <sort_order>20</sort_order>
+            <action>saas/dashboard</action>
+        </dashboard>
+        <system translate="title" module="saas">
+            <title>System</title>
+            <sort_order>90</sort_order>
+            <children>
+                <acl translate="title">
+                    <title>Permissions</title>
+                    <sort_order>70</sort_order>
+                    <children>
+                        <users translate="title">
+                            <title>Users</title>
+                            <action>saas/permissions_user</action>
+                        </users>
+                        <roles translate="title">
+                            <title>Roles</title>
+                            <action>saas/permissions_role</action>
+                        </roles>
+                    </children>
+                </acl>
+                <config translate="title">
+                    <title>Configuration</title>
+                    <action>saas/system_config</action>
+                    <sort_order>110</sort_order>
+                </config>
+            </children>
+        </system>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow everything</title>
+            </all>
+            <saas translate="title" module="saas">
+                <title>SaaS Admin</title>
+                <children>
+                    <profile translate="title">
+                        <title>My Account</title>
+                        <sort_order>50</sort_order>
+                    </profile>
+                    <dashboard translate="title">
+                        <title>Dashboard</title>
+                        <sort_order>0</sort_order>
+                    </dashboard>
+                    <system translate="title">
+                        <title>System</title>
+                        <sort_order>90</sort_order>
+                        <children>
+                            <acl translate="title">
+                                <title>Permissions</title>
+                                <sort_order>0</sort_order>
+                                <children>
+                                    <roles translate="title">
+                                        <title>Roles</title>
+                                        <sort_order>10</sort_order>
+                                    </roles>
+                                    <users translate="title">
+                                        <title>Users</title>
+                                        <sort_order>20</sort_order>
+                                    </users>
+                                </children>
+                            </acl>
+                            <config translate="title">
+                                <title>Configuration</title>
+                                <sort_order>20</sort_order>
+                                <children>
+                                    <general translate="title">
+                                        <title>General Section</title>
+                                        <sort_order>20</sort_order>
+                                    </general>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <global_search translate="title">
+                        <title>Global Search</title>
+                        <sort_order>100</sort_order>
+                    </global_search>
+                </children>
+            </saas>
+        </resources>
+        <privilegeSets>
+            <default>
+                <view>
+                    <descr>View entity</descr>
+                </view>
+                <edit>
+                    <descr>Edit entity</descr>
+                </edit>
+                <delete>
+                    <descr/>
+                </delete>
+                <create>
+                    <descr/>
+                </create>
+            </default>
+        </privilegeSets>
+    </acl>
+</config>
