@@ -11,6 +11,16 @@
         </Cm_Saas>
     </modules>
     <global>
+        <helpers>
+            <saas>
+                <class>Cm_Saas_Helper</class>
+            </saas>
+        </helpers>
+        <blocks>
+            <saas>
+                <class>Cm_Saas_Block</class>
+            </saas>
+        </blocks>
         <models>
             <saas>
                 <class>Cm_Saas_Model</class>
@@ -19,6 +29,8 @@
             <saas_resource>
                 <class>Cm_Saas_Model_Resource</class>
                 <entities>
+                    <db>            <table>saas_db</table></db>
+                    <resource>      <table>saas_resource</table></resource>
                     <user>          <table>saas_user</table></user>
                     <user_role>     <table>saas_user_role</table></user_role>
                     <user_rule>     <table>saas_user_rule</table></user_rule>
@@ -26,11 +38,19 @@
                 </entities>
             </saas_resource>
         </models>
-        <blocks>
-            <saas>
-                <class>Cm_Saas_Block</class>
-            </saas>
-        </blocks>
+        <resources>
+            <saas_setup>
+                <setup>
+                    <module>Cm_Saas</module>
+                    <class>Cm_Saas_Model_Resource_Setup</class>
+                </setup>
+            </saas_setup>
+            <saas_core_setup>
+                <setup>
+                    <module>Cm_Saas</module>
+                </setup>
+            </saas_core_setup>
+        </resources>
         <template>
             <email>
             </email>

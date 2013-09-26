@@ -25,9 +25,11 @@
  */
 
 $installer = $this;
-/* @var $installer Mage_Core_Model_Resource_Setup */
+/* @var $installer Cm_Saas_Model_Resource_Setup */
 
 $installer->startSetup();
+
+// TODO - create saas_resource
 
 /**
  * Create table 'saas/user_assert'
